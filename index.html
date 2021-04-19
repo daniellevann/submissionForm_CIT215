@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - subform</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="subForm">
+  <input type="text" required v-model="textField" placeholder="Name" />
+  <br>
+  <input for="email" type="email" required v-model="email" placeholder="Email" />
+
+  <div>{{mess}}</div>
+  <div>{{mess2}}</div>
+  <div v-if="textField.length>=2 && mess2 !=='Email needs to be formatted as example@domain.xxx' && email"> Submitted</div>
+  <div v-else-if="!email && !textField"></div>
+  <div v-else>Not Submitted</div>
+  <namemess v-for="item in list" v-bind:real="item.name" v-bind:code="item.codename">
+
+  </namemess>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
